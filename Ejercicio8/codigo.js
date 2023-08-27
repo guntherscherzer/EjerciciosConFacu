@@ -1,6 +1,7 @@
-let numero = Number(prompt("igrese el numero que quiere factorizar"))
-let resul = 1
-    for (let i = numero; i > 0; i--){
-        resul *= i;       
+//Escribir el código de una función a la que se pasa como parámetro un número entero y devuelve 
+//como resultado una cadena de texto que indica si el número es par o impar.
+//Mostrar por pantalla el resultado devuelto por la función.
+let numero = Number(prompt("Ingrese un numero"))
+    if () {
+        
     }
-console.log(resul);
