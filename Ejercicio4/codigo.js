@@ -4,4 +4,13 @@
 //Determinar el resultado de las cinco operaciones matemáticas realizadas con los dos elementos numéricos
 
 let valores = [true, 5, false, "hola", "adios", 2];
+text(valores);
 
+function text(valores) {
+    if (valores[3]<valores[4]) {
+        console.log("El texto mayor es ",valores[4]);
+    }else console.log("el texto mayor es ",valores[3]);
+}
+function (params) {
+    
+}
