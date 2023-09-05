@@ -42,10 +42,30 @@ const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
 
 // 1) Poder instanciar las diferentes clases sin obtener error alguno.
 
+function test1(){
+
+}
+
 // 2) Instanciar las clases sin pasarle parametros de construccion y que tire error.
+
+function test2(){
+    
+}
 
 // 3) Instanciar la clase Persona y poder invocar el metodo obtDetalles, mostrando en pantalla los datos de la persona.
 
+function test3(){
+    
+}
+
 // 4) Instanciar las clases de Estudiante y Profesor y corroborar que contenga las propiedades heredadas.
 
+function test4(){
+    
+}
+
 // 5) Instanciar las clases de Estudiante y Profesor y corroborar que contenga el metodo heredado.
+
+function test5(){
+    
+}
