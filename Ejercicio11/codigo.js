@@ -42,9 +42,11 @@ const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
 
 // 1) Poder instanciar las diferentes clases sin obtener error alguno.
 function test1() {
-    console.log("test1:");
-    console.log(estudiante1);
-    console.log(profesor1);
+  const estudiante1 = new Estudiante("Juan",20,"Masculino","Matematicas","nivel1");
+  const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
+  console.log("test1:");
+  console.log(estudiante1);
+  console.log(profesor1);
   }
   
   // 2) Instanciar las clases sin pasarles parámetros de construcción y que tire error.
@@ -70,25 +72,37 @@ function test1() {
   function test3() {
     console.log("test3:");
     const persona = new Persona("Ana", 30, "Femenino");
+    const existeElmetodo = "obtDetalles" in persona;
     persona.obtDetalles();
+    console.log("El metodo obtDetalles es existente:",existeElmetodo);
   }
   
   // 4) Instanciar las clases de Estudiante y Profesor y corroborar que contengan las propiedades heredadas.
   function test4() {
+    const estudiante1 = new Estudiante(20,"Masculino","Matematicas","nivel1");
+    const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
     console.log("test4:");
-    console.log("Estudiante:");
-    console.log(estudiante1);
-    console.log("Profesor:");
-    console.log(profesor1);
+    if (estudiante1.hasOwnProperty("nombre") == true && estudiante1.hasOwnProperty("edad") == true && estudiante1.hasOwnProperty("genero") == true ) {
+      console.log("Estudiante:",true);
+      
+    }else console.log("Estudiante:",false); 
+
+    if (profesor1.hasOwnProperty("nombre") == true && profesor1.hasOwnProperty("edad") == true && profesor1.hasOwnProperty("genero") == true ) {
+      console.log("Profesor:",true);
+      
+    }else console.log("Profesor:",false); 
   }
   
   // 5) Instanciar las clases de Estudiante y Profesor y corroborar que contengan el método heredado.
   function test5() {
+    const estudiante1 = new Estudiante(20,"Masculino","Matematicas","nivel1");
+    const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
     console.log("test5:");
-    console.log("Estudiante:");
-    estudiante1.obtDetalles();
-    console.log("Profesor:");
-    profesor1.obtDetalles();
+    const estudianteTieneMetodo = "obtDetalles" in estudiante1;
+    const profesorTieneMetodo = "obtDetalles" in profesor1;
+    console.log("Estudiante:",estudianteTieneMetodo);
+    console.log("Profesor:",profesorTieneMetodo);
+    
   }
   
   // Ejecutar los casos de prueba
