@@ -34,28 +34,25 @@ class Profesor extends Persona{
   asignar(){};
 }
 
-// Instancia de Objetos
-const estudiante1 = new Estudiante("Juan",20,"Masculino","Matematicas","nivel1");
-const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
- 
+
 // Casos de prueba
 
 // 1) Poder instanciar las diferentes clases sin obtener error alguno.
 function test1() {
   const estudiante1 = new Estudiante("Juan",20,"Masculino","Matematicas","nivel1");
-  cons 
+  const persona1 = new Persona("Jorge",78,"Se autopersive como un marsupial de las altas planurasdel machupichu")
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
-  return("test1:",estudiante1,profesor1);
+  return(persona1.nombre || persona1.edad || persona1.genero || estudiante1.nombre || estudiante1.edad || estudiante1.genero || profesor1.nombre || profesor1.edad || profesor1.genero);
 }
+
   
 // 2) Instanciar las clases sin pasarles parámetros de construcción y que tire error.
 function test2() {
   const estudiante2 = new Estudiante();
   const profesor2 = new Profesor();
-  if (!estudiante2.nombre || !estudiante2.edad || !estudiante2.genero || !profesor2.nombre || !profesor2.edad || !profesor2.genero) {
-    return(true);
-  }
-  return(false)
+  const persona2 = new Persona()
+  return(!persona2.nombre || !persona2.edad || !persona2.genero ||!estudiante2.nombre || !estudiante2.edad || !estudiante2.genero || !profesor2.nombre || !profesor2.edad || !profesor2.genero);
+
 }
     
     
@@ -65,7 +62,6 @@ function test2() {
 function test3() {
   const persona = new Persona("Ana", 30, "Femenino");
   const existeElmetodo = "obtDetalles" in persona;
-  persona.obtDetalles();
   return(existeElmetodo);
 }
 
@@ -73,13 +69,9 @@ function test3() {
 function test4() {
   const estudiante1 = new Estudiante(20,"Masculino","Matematicas","nivel1");
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
-  if (estudiante1.hasOwnProperty("nombre") && estudiante1.hasOwnProperty("edad") && estudiante1.hasOwnProperty("genero") 
+  return(estudiante1.hasOwnProperty("nombre") && estudiante1.hasOwnProperty("edad") && estudiante1.hasOwnProperty("genero") 
     && 
-    profesor1.hasOwnProperty("nombre") && profesor1.hasOwnProperty("edad") && profesor1.hasOwnProperty("genero")) {
-    return(true);
-    
-  }
-  return(false);
+    profesor1.hasOwnProperty("nombre") && profesor1.hasOwnProperty("edad") && profesor1.hasOwnProperty("genero"));  
 }
 
 // 5) Instanciar las clases de Estudiante y Profesor y corroborar que contengan el método heredado.
@@ -88,15 +80,12 @@ function test5() {
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
   const estudianteTieneMetodo = "obtDetalles" in estudiante1;
   const profesorTieneMetodo = "obtDetalles" in profesor1;
-  if (estudianteTieneMetodo && profesorTieneMetodo ) {
-    return(true)
-  }
-  return(false);
+  return(estudianteTieneMetodo && profesorTieneMetodo)
 }
 
 // Ejecutar los casos de prueba
-test1();
-test2();
-test3();
-test4();
-test5();
+console.log("test 1:",test1() ? "OK" : "FALLO");
+console.log("test 2:",test2() ? "OK" : "FALLO");
+console.log("test 3:",test3() ? "OK" : "FALLO");
+console.log("test 4:",test4() ? "OK" : "FALLO");
+console.log("test 5:",test5() ? "OK" : "FALLO");
