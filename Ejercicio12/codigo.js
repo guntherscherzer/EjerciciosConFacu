@@ -4,5 +4,25 @@
 
 
 
+function lanzarDado() {
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+
+const frecuencias = new Array(11).fill(0); 
+
+const repeticiones = 36000;
+for (let i = 0; i < repeticiones; i++) {
+  const dado1 = lanzarDado();
+  const dado2 = lanzarDado();
+  const numsuma = dado1 + dado2;
+  frecuencias[numsuma]++;
+}
+
+for (let i = 2; i <= 12; i++) {
+  console.log(`al sumar los dados el numero ${i} se repitio ${frecuencias[i]} veces`);
+}
+
+
 
 
