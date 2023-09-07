@@ -44,65 +44,47 @@ const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
 function test1() {
   const estudiante1 = new Estudiante("Juan",20,"Masculino","Matematicas","nivel1");
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
-  console.log("test1:");
-  console.log(estudiante1);
-  console.log(profesor1);
+  return("test1:",estudiante1,profesor1);
   }
   
   // 2) Instanciar las clases sin pasarles parámetros de construcción y que tire error.
   function test2() {
-    console.log("test2:");
     const estudiante2 = new Estudiante();
     const profesor2 = new Profesor();
-    console.log(estudiante2);
-    console.log(profesor2);
-    if (!estudiante2.nombre || !estudiante2.edad || !estudiante2.genero) {
-        console.log("Error al crear una instancia de Estudiante.");
+    if (!estudiante2.nombre || !estudiante2.edad || !estudiante2.genero || !profesor2.nombre || !profesor2.edad || !profesor2.genero) {
+        return(true);
+      }return(false)
     }
     
-    if (!profesor2.nombre || !profesor2.edad || !profesor2.genero) {
-        console.log("Error al crear una instancia de Profesor.");
-    }
     
-    console.log("No se produce ningun error.");
-}
 
   
   // 3) Instanciar la clase Persona y poder invocar el método obtDetalles, mostrando en pantalla los datos de la persona.
   function test3() {
-    console.log("test3:");
     const persona = new Persona("Ana", 30, "Femenino");
     const existeElmetodo = "obtDetalles" in persona;
     persona.obtDetalles();
-    console.log("El metodo obtDetalles es existente:",existeElmetodo);
+    return(existeElmetodo);
   }
   
   // 4) Instanciar las clases de Estudiante y Profesor y corroborar que contengan las propiedades heredadas.
   function test4() {
     const estudiante1 = new Estudiante(20,"Masculino","Matematicas","nivel1");
     const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
-    console.log("test4:");
-    if (estudiante1.hasOwnProperty("nombre") == true && estudiante1.hasOwnProperty("edad") == true && estudiante1.hasOwnProperty("genero") == true ) {
-      console.log("Estudiante:",true);
+    if (estudiante1.hasOwnProperty("nombre") == true && estudiante1.hasOwnProperty("edad") == true && estudiante1.hasOwnProperty("genero") == true 
+      && profesor1.hasOwnProperty("nombre") == true && profesor1.hasOwnProperty("edad") == true && profesor1.hasOwnProperty("genero") == true ) {
+      return(true);
       
-    }else console.log("Estudiante:",false); 
-
-    if (profesor1.hasOwnProperty("nombre") == true && profesor1.hasOwnProperty("edad") == true && profesor1.hasOwnProperty("genero") == true ) {
-      console.log("Profesor:",true);
-      
-    }else console.log("Profesor:",false); 
+    }return(false);
   }
   
   // 5) Instanciar las clases de Estudiante y Profesor y corroborar que contengan el método heredado.
   function test5() {
     const estudiante1 = new Estudiante(20,"Masculino","Matematicas","nivel1");
     const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
-    console.log("test5:");
     const estudianteTieneMetodo = "obtDetalles" in estudiante1;
     const profesorTieneMetodo = "obtDetalles" in profesor1;
-    console.log("Estudiante:",estudianteTieneMetodo);
-    console.log("Profesor:",profesorTieneMetodo);
-    
+    return("Estudiante:",estudianteTieneMetodo,"Profesor:",profesorTieneMetodo);
   }
   
   // Ejecutar los casos de prueba
