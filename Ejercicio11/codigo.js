@@ -22,7 +22,7 @@ class Estudiante extends Persona{
       this.curso = curso;
       this.grupo = grupo;
   }
-registrar() {}
+  registrar() {}
 }
 //objeto Profesor
 class Profesor extends Persona{
@@ -31,7 +31,7 @@ class Profesor extends Persona{
       this.asignatura = asignatura
       this.nivel = nivel;
   }
-asignar(){};
+  asignar(){};
 }
 
 // Instancia de Objetos
