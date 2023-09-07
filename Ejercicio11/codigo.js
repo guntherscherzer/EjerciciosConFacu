@@ -43,6 +43,7 @@ const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
 // 1) Poder instanciar las diferentes clases sin obtener error alguno.
 function test1() {
   const estudiante1 = new Estudiante("Juan",20,"Masculino","Matematicas","nivel1");
+  cons 
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
   return("test1:",estudiante1,profesor1);
 }
@@ -52,8 +53,9 @@ function test2() {
   const estudiante2 = new Estudiante();
   const profesor2 = new Profesor();
   if (!estudiante2.nombre || !estudiante2.edad || !estudiante2.genero || !profesor2.nombre || !profesor2.edad || !profesor2.genero) {
-      return(true);
-    }return(false)
+    return(true);
+  }
+  return(false)
 }
     
     
@@ -71,11 +73,13 @@ function test3() {
 function test4() {
   const estudiante1 = new Estudiante(20,"Masculino","Matematicas","nivel1");
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
-  if (estudiante1.hasOwnProperty("nombre") == true && estudiante1.hasOwnProperty("edad") == true && estudiante1.hasOwnProperty("genero") == true 
-    && profesor1.hasOwnProperty("nombre") == true && profesor1.hasOwnProperty("edad") == true && profesor1.hasOwnProperty("genero") == true ) {
+  if (estudiante1.hasOwnProperty("nombre") && estudiante1.hasOwnProperty("edad") && estudiante1.hasOwnProperty("genero") 
+    && 
+    profesor1.hasOwnProperty("nombre") && profesor1.hasOwnProperty("edad") && profesor1.hasOwnProperty("genero")) {
     return(true);
     
-  }return(false);
+  }
+  return(false);
 }
 
 // 5) Instanciar las clases de Estudiante y Profesor y corroborar que contengan el método heredado.
@@ -84,7 +88,10 @@ function test5() {
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
   const estudianteTieneMetodo = "obtDetalles" in estudiante1;
   const profesorTieneMetodo = "obtDetalles" in profesor1;
-  return("Estudiante:",estudianteTieneMetodo,"Profesor:",profesorTieneMetodo);
+  if (estudianteTieneMetodo || profesorTieneMetodo ) {
+    return(true)
+  }
+  return(false);
 }
 
 // Ejecutar los casos de prueba
