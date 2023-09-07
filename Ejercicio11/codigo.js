@@ -88,7 +88,7 @@ function test5() {
   const profesor1 = new Profesor("Wilfred",28,"Transexual","Historia","Nivel2");
   const estudianteTieneMetodo = "obtDetalles" in estudiante1;
   const profesorTieneMetodo = "obtDetalles" in profesor1;
-  if (estudianteTieneMetodo || profesorTieneMetodo ) {
+  if (estudianteTieneMetodo && profesorTieneMetodo ) {
     return(true)
   }
   return(false);
